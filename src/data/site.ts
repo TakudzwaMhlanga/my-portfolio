@@ -8,7 +8,7 @@ export const profile = {
   callNumber: '+263773543589',
   githubUrl: 'https://github.com/TakudzwaMhlanga',
   linkedinUrl: 'https://www.linkedin.com/in/takudzwa-mhlanga-6a33b7349/',
-  portraitUrl: '', // Add an optimized image to public/ and enter e.g. '/portrait.webp'.
+  portraitUrl: '/images/takudzwa-portrait.jpg',
 }
 
 export type Project = {

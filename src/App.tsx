@@ -72,7 +72,7 @@ function About() {
   const portrait = profile.portraitUrl ? `${import.meta.env.BASE_URL}${profile.portraitUrl.replace(/^\//, '')}` : ''
   return <section id="about" className="section about-section"><div className="container about-grid">
     <div className="about-portrait">
-      {portrait ? <img src={portrait} alt="Portrait of Takudzwa Mhlanga" /> : <div className="initials" aria-label="Takudzwa Mhlanga initials">TM<span className="initials-star">✳</span></div>}
+      {portrait ? <img src={portrait} alt="Takudzwa Mhlanga outdoors in a tan suit and sunglasses" decoding="async" /> : <div className="initials" aria-label="Takudzwa Mhlanga initials">TM<span className="initials-star">✳</span></div>}
       <span className="portrait-caption">THE PERSON BEHIND THE CODE <span>01 / 05</span></span>
     </div>
     <div className="about-copy"><SectionLabel number="01">ABOUT ME</SectionLabel><h2>Curiosity meets <em>craft.</em></h2>
