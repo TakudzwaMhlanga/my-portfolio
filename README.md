@@ -24,10 +24,12 @@ Vite writes the deployable site to `dist/`. `npm ci` uses the committed `package
 
 Most information lives in **`src/data/site.ts`**:
 
-- `profile.email` and `profile.linkedinUrl` are intentionally empty. Add your real details. The GitHub profile URL is already set from the repository owner. The site hides empty profile links. When you add an email address, the contact area becomes a working `mailto:` button.
+- `profile` contains the public email, WhatsApp, call number, GitHub, and LinkedIn links. Check these before publishing. The contact area provides `mailto:`, WhatsApp, and `tel:` links.
 - `profile.portraitUrl` is empty, so the About section shows designed initials. Add an optimized portrait such as `public/portrait.webp`, then set the value to `'/portrait.webp'`. Add meaningful alt text in `src/App.tsx` if the image needs more detail.
-- Edit `projects` to update status, case studies, technologies, features and optional `demoUrl`/`sourceUrl`. Only add links that exist. The first two projects are labelled concept/proposed; update those labels only when the work reaches a new stage.
+- Edit `projects` to update status, case studies, technologies, features and optional `demoUrl`/`sourceUrl`. Only add links that exist. The AI loan eligibility project remains a concept; KCI Microfinance and Warupinduka are listed as built based on the supplied dashboard screenshots.
+- The original Warupinduka and KCI screenshots and both freeCodeCamp certificate images are in `public/images/`. Their `imageUrl` values in `src/data/site.ts` point to these local assets. The certificate cards also link to their verification pages.
 - `skillAreas` are explicitly labelled **areas of interest**, since specific skills have not yet been confirmed. Review the list and change the wording and content to reflect your real skills.
+- `certifications` contains the two freeCodeCamp certificate links and issue dates shown in the Skills section.
 - `studioFocus` contains intended offerings, not claims about completed client work.
 
 Layout and interaction are in `src/App.tsx`; styling is in `src/styles.css`. The page title and sharing description are in `index.html`. The favicon is `public/favicon.svg`. There is no stock photography or invented portrait. Google Fonts may be fetched when available; system font fallbacks keep the site readable offline.
@@ -66,10 +68,8 @@ The custom `404.html` gives visitors a way back if they reach a missing URL. It 
 
 ## Details still needed from you
 
-- Your public contact email.
-- Your LinkedIn profile URL, if you want it displayed. The GitHub profile and portfolio source links are already set.
 - A portrait, if you want one.
 - Confirmation of your actual skills and preferred technologies.
-- Real demo/source URLs and progress updates for the project concepts when available.
+- Any further academic details you want displayed, such as institution and degree dates.
 
 No client names, testimonials, performance statistics, qualifications or years of experience were invented for this site.

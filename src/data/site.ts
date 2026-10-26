@@ -3,10 +3,11 @@ export const profile = {
   name: 'Takudzwa Mhlanga',
   signature: 'Casper Hlangester',
   studio: 'CasperCode Studio',
-  // Replace these empty strings with real details before publishing contact links.
-  email: '',
+  email: 'mhlangatakudzwa236@gmail.com',
+  whatsappNumber: '263777225094',
+  callNumber: '+263773543589',
   githubUrl: 'https://github.com/TakudzwaMhlanga',
-  linkedinUrl: '',
+  linkedinUrl: 'https://www.linkedin.com/in/takudzwa-mhlanga-6a33b7349/',
   portraitUrl: '', // Add an optimized image to public/ and enter e.g. '/portrait.webp'.
 }
 
@@ -24,6 +25,8 @@ export type Project = {
   features: string[]
   demoUrl?: string
   sourceUrl?: string
+  imageUrl?: string
+  imageAlt?: string
   visual: 'finance' | 'construction' | 'portfolio'
 }
 
@@ -43,22 +46,40 @@ export const projects: Project[] = [
     visual: 'finance',
   },
   {
-    id: 'warupinduka',
+    id: 'kci-microfinance',
     number: '02',
+    title: 'KCI Microfinance Loan Management System',
+    eyebrow: 'Finance / operations',
+    status: 'Built',
+    summary: 'A Ngezi branch dashboard for tracking loans, repayments, expenses and monthly financial totals.',
+    problem: 'Branch staff need a single place to register clients, enter loans and repayments, and see current financial figures.',
+    solution: 'Built a loan management dashboard with branch and date controls, summary cards, client registration and repayment entry.',
+    role: 'System design and web application development.',
+    technologies: ['PHP', 'Web application'],
+    features: ['Business and salaried loan summaries', 'Client and loan registration', 'Repayment and expense entry'],
+    imageUrl: '/images/kci-dashboard.png',
+    imageAlt: 'KCI Micro-Finance Ngezi branch dashboard with loan totals and entry forms',
+    visual: 'finance',
+  },
+  {
+    id: 'warupinduka',
+    number: '03',
     title: 'Warupinduka Construction Dashboard',
     eyebrow: 'Operations / dashboard',
-    status: 'Proposed',
-    summary: 'A proposed web-based workspace for construction administration, finances, clients and project monitoring.',
+    status: 'Built',
+    summary: 'A web workspace for construction projects, finances, clients and team operations.',
     problem: 'Construction information spread across separate tools can make it harder to see project progress and operational details together.',
-    solution: 'Design a central dashboard with distinct views for administration, finance, client records and project status.',
-    role: 'System concept, interface planning and proposed implementation.',
-    technologies: ['Web application stack (to be chosen)', 'Database (to be chosen)'],
-    features: ['Project progress overview', 'Finance and client views', 'Administrative workspace'],
+    solution: 'Built a central workspace with project summaries and navigation for finance, clients, reports, procurement and workforce.',
+    role: 'System design and web application development.',
+    technologies: ['Web application'],
+    features: ['Project progress overview', 'Finance and client views', 'Procurement and workforce areas'],
+    imageUrl: '/images/warupinduka-dashboard.png',
+    imageAlt: 'Warupinduka Construction workspace overview with project status cards',
     visual: 'construction',
   },
   {
     id: 'portfolio',
-    number: '03',
+    number: '04',
     title: 'CasperCode Studio Portfolio',
     eyebrow: 'Web experience / identity',
     status: 'Built',
@@ -81,6 +102,31 @@ export const skillAreas = [
   { category: 'Databases', items: ['Data modelling', 'Database-backed applications'] },
   { category: 'Data', items: ['Predictive modelling', 'Data visualization', 'Explainable systems'] },
   { category: 'Tools', items: ['Git & GitHub', 'Vite', 'Deployment workflows'] },
+]
+
+export type Certification = {
+  title: string
+  issuer: string
+  issued: string
+  url: string
+  imageUrl?: string
+}
+
+export const certifications: Certification[] = [
+  {
+    title: 'Data Analysis with Python',
+    issuer: 'freeCodeCamp',
+    issued: '17 February 2025',
+    url: 'https://www.freecodecamp.org/certification/takudzwa-mhlanga/data-analysis-with-python-v7',
+    imageUrl: '/images/data-analysis-certificate.png',
+  },
+  {
+    title: 'Machine Learning with Python',
+    issuer: 'freeCodeCamp',
+    issued: '17 March 2025',
+    url: 'https://www.freecodecamp.org/certification/takudzwa-mhlanga/machine-learning-with-python-v7',
+    imageUrl: '/images/machine-learning-certificate.png',
+  },
 ]
 
 export const studioFocus = [

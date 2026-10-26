@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { profile, projects, skillAreas, studioFocus, type Project } from './data/site'
+import { certifications, profile, projects, skillAreas, studioFocus, type Project } from './data/site'
 
 const nav = [
   ['Home', 'home'], ['About', 'about'], ['Projects', 'projects'],
@@ -94,7 +94,7 @@ function ProjectVisual({ variant }: { variant: Project['visual'] }) {
 
 function ProjectCard({ project }: { project: Project }) {
   return <article className="project-card">
-    <ProjectVisual variant={project.visual} />
+    {project.imageUrl ? <div className="project-screenshot"><img src={`${import.meta.env.BASE_URL}${project.imageUrl.replace(/^\//, '')}`} alt={project.imageAlt || `${project.title} screenshot`} loading="lazy" /></div> : <ProjectVisual variant={project.visual} />}
     <div className="project-content"><div className="project-meta"><span>{project.number} / {project.eyebrow}</span><span className="status">{project.status}</span></div>
       <h3>{project.title}</h3><p>{project.summary}</p>
       <details className="case-study"><summary>Explore case study <span className="expand-symbol" aria-hidden="true">+</span></summary>
@@ -110,7 +110,7 @@ function Projects() {
 }
 
 function Skills() {
-  return <section id="skills" className="section skills-section"><div className="container skills-grid"><div><SectionLabel number="03">SKILLS & INTERESTS</SectionLabel><h2>Always learning.<br /><em>Always building.</em></h2><p>These are areas of interest and technologies connected to the work I want to explore. I’ll update this list with confirmed hands-on skills as my portfolio grows.</p></div><div className="skill-list">{skillAreas.map((group, index) => <div className="skill-row" key={group.category}><span className="skill-number">0{index + 1}</span><div><h3>{group.category}</h3><p>{group.items.join(' · ')}</p></div><Arrow diagonal /></div>)}</div></div></section>
+  return <section id="skills" className="section skills-section"><div className="container"><div className="skills-grid"><div><SectionLabel number="03">SKILLS & INTERESTS</SectionLabel><h2>Always learning.<br /><em>Always building.</em></h2><p>My academic focus is Data Science and Informatics. These are areas of interest and technologies connected to the work I want to explore.</p></div><div className="skill-list">{skillAreas.map((group, index) => <div className="skill-row" key={group.category}><span className="skill-number">0{index + 1}</span><div><h3>{group.category}</h3><p>{group.items.join(' · ')}</p></div><Arrow diagonal /></div>)}</div></div><div className="certifications"><h3>Certifications</h3><div className="certification-list">{certifications.map(certificate => <a key={certificate.url} href={certificate.url} target="_blank" rel="noopener noreferrer">{certificate.imageUrl && <img src={`${import.meta.env.BASE_URL}${certificate.imageUrl.replace(/^\//, '')}`} alt={`${certificate.title} certificate awarded to Takudzwa Mhlanga`} loading="lazy" />}<span><small>{certificate.issuer} · {certificate.issued}</small><strong>{certificate.title}</strong></span><Arrow diagonal /></a>)}</div></div></div></section>
 }
 
 function Studio() {
@@ -120,6 +120,7 @@ function Studio() {
 function Contact() {
   const hasEmail = Boolean(profile.email.trim())
   return <section id="contact" className="section contact-section"><div className="container contact-inner"><SectionLabel number="05">CONTACT</SectionLabel><div className="contact-grid"><div><h2>Have something<br /><em>in mind?</em></h2><p>Whether it’s a role, a collaboration or an idea worth exploring, I’d be glad to hear about it.</p></div><div className="contact-action">{hasEmail ? <a className="button button-primary email-button" href={`mailto:${profile.email}`}>Email me <Arrow diagonal /></a> : <div className="contact-placeholder"><span className="placeholder-icon">@</span><strong>Email coming soon</strong><p>Contact details will appear here once added to the site configuration.</p></div>}
+        <div className="contact-links"><a href={`mailto:${profile.email}`}>{profile.email}</a><a href={`https://wa.me/${profile.whatsappNumber}`} target="_blank" rel="noopener noreferrer">WhatsApp: +{profile.whatsappNumber}</a><a href={`tel:${profile.callNumber}`}>Call: {profile.callNumber}</a></div>
         {(profile.githubUrl || profile.linkedinUrl) && <div className="socials">{profile.githubUrl && <a href={profile.githubUrl} target="_blank" rel="noopener noreferrer">GitHub <Arrow diagonal /></a>}{profile.linkedinUrl && <a href={profile.linkedinUrl} target="_blank" rel="noopener noreferrer">LinkedIn <Arrow diagonal /></a>}</div>}
       </div></div></div></section>
 }
