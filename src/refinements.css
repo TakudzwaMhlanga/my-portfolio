@@ -213,6 +213,9 @@
 
 .project-symbol svg { transform: rotate(8deg); }
 .project-card:hover .project-symbol { transform: translate(-50%, -53%) rotate(-4deg); box-shadow: 10px 15px 0 rgba(79,224,208,.16), 0 25px 40px rgba(0,0,0,.3); }
+.project-content > .project-access-note { display: inline-block; margin: 0 0 20px; padding: 7px 10px; border: 1px solid #45626a; color: #b4cbd0; font: 500 11px 'DM Mono', monospace; }
+.project-links-visible { margin: 0 0 18px; }
+.project-links-visible a { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; }
 .project-visual-kci-microfinance .project-symbol { color: #f4e6b3; border-color: #9d9a78; background: #3b4441; }
 .project-visual-warupinduka .project-symbol { color: #b7dcef; border-color: #7397a4; background: #2c4552; }
 .project-visual-portfolio .project-symbol { color: #a8d9f7; border-color: #74a1b6; background: #1d4357; }

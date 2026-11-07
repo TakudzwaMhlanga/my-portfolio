@@ -36,6 +36,7 @@ export type Project = {
   role: string
   technologies: string[]
   features: string[]
+  accessNote?: string
   demoUrl?: string
   sourceUrl?: string
 }
@@ -66,6 +67,7 @@ export const projects: Project[] = [
     role: 'System design and web application development.',
     technologies: ['PHP', 'Web application'],
     features: ['Business and salaried loan summaries', 'Client and loan registration', 'Repayment and expense entry'],
+    accessNote: 'Private system · no public access',
   },
   {
     id: 'warupinduka',
@@ -73,12 +75,13 @@ export const projects: Project[] = [
     title: 'Warupinduka Construction Dashboard',
     eyebrow: 'Operations / dashboard',
     status: 'Built',
-    summary: 'A web workspace for construction projects, finances, clients and team operations.',
+    summary: 'A live web workspace for construction projects, finances, clients and team operations, accessed by clients.',
     problem: 'Construction information spread across separate tools can make it harder to see project progress and operational details together.',
     solution: 'Built a central workspace with project summaries and navigation for finance, clients, reports, procurement and workforce.',
     role: 'System design and web application development.',
     technologies: ['Web application'],
     features: ['Project progress overview', 'Finance and client views', 'Procurement and workforce areas'],
+    demoUrl: 'https://warupinduka-free.arupinduka--onstruction--ompany.workers.dev/',
   },
   {
     id: 'portfolio',
@@ -96,13 +99,12 @@ export const projects: Project[] = [
   },
 ]
 
-// These are interests, not claims of proficiency. Move items into a confirmed-skills
-// list only after Takudzwa reviews them.
+// These combine subjects supported by work or certifications with areas of interest.
 export const skillAreas = [
   { category: 'Frontend', items: ['React', 'TypeScript', 'Responsive interfaces', 'Accessibility'] },
   { category: 'Backend', items: ['API design', 'Server-side application architecture'] },
   { category: 'Databases', items: ['Data modelling', 'Database-backed applications'] },
-  { category: 'Data', items: ['Predictive modelling', 'Data visualization', 'Explainable systems'] },
+  { category: 'Data', items: ['Data Analysis with Python (certified)', 'Machine Learning with Python (certified)', 'Data visualization', 'Explainable systems'] },
   { category: 'Tools', items: ['Git & GitHub', 'Vite', 'Deployment workflows'] },
 ]
 
