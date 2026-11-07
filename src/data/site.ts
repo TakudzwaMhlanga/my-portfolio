@@ -25,9 +25,6 @@ export type Project = {
   features: string[]
   demoUrl?: string
   sourceUrl?: string
-  imageUrl?: string
-  imageAlt?: string
-  visual: 'finance' | 'construction' | 'portfolio'
 }
 
 export const projects: Project[] = [
@@ -43,7 +40,6 @@ export const projects: Project[] = [
     role: 'Concept, product planning and proposed full-stack implementation.',
     technologies: ['Python and predictive modelling (planned)', 'React and TypeScript (planned)', 'Public datasets (planned)'],
     features: ['Explainable model output', 'Eligibility and risk overview', 'Human review workflow'],
-    visual: 'finance',
   },
   {
     id: 'kci-microfinance',
@@ -57,9 +53,6 @@ export const projects: Project[] = [
     role: 'System design and web application development.',
     technologies: ['PHP', 'Web application'],
     features: ['Business and salaried loan summaries', 'Client and loan registration', 'Repayment and expense entry'],
-    imageUrl: '/images/kci-dashboard.png',
-    imageAlt: 'KCI Micro-Finance Ngezi branch dashboard with loan totals and entry forms',
-    visual: 'finance',
   },
   {
     id: 'warupinduka',
@@ -73,9 +66,6 @@ export const projects: Project[] = [
     role: 'System design and web application development.',
     technologies: ['Web application'],
     features: ['Project progress overview', 'Finance and client views', 'Procurement and workforce areas'],
-    imageUrl: '/images/warupinduka-dashboard.png',
-    imageAlt: 'Warupinduka Construction workspace overview with project status cards',
-    visual: 'construction',
   },
   {
     id: 'portfolio',
@@ -90,7 +80,6 @@ export const projects: Project[] = [
     technologies: ['React', 'TypeScript', 'Vite', 'CSS', 'GitHub Pages'],
     features: ['Responsive layout', 'Expandable case studies', 'Keyboard-friendly navigation'],
     sourceUrl: 'https://github.com/TakudzwaMhlanga/my-portfolio',
-    visual: 'portfolio',
   },
 ]
 

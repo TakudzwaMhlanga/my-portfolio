@@ -25,9 +25,9 @@ Vite writes the deployable site to `dist/`. `npm ci` uses the committed `package
 Most information lives in **`src/data/site.ts`**:
 
 - `profile` contains the public email, WhatsApp, call number, GitHub, and LinkedIn links. Check these before publishing. The contact area provides `mailto:`, WhatsApp, and `tel:` links.
-- `profile.portraitUrl` points to the supplied profile photo in `public/images/`. The About section displays it with descriptive alt text.
-- Edit `projects` to update status, case studies, technologies, features and optional `demoUrl`/`sourceUrl`. Only add links that exist. The AI loan eligibility project remains a concept; KCI Microfinance and Warupinduka are listed as built based on the supplied dashboard screenshots.
-- The original Warupinduka and KCI screenshots and both freeCodeCamp certificate images are in `public/images/`. Their `imageUrl` values in `src/data/site.ts` point to these local assets. The certificate cards also link to their verification pages.
+- `profile.portraitUrl` points to the supplied profile photo in `public/images/`. The first screen displays it with descriptive alt text.
+- Edit `projects` to update status, case studies, technologies, features and optional `demoUrl`/`sourceUrl`. Only add links that exist. The AI loan eligibility project remains a concept; KCI Microfinance and Warupinduka are listed as built based on the project details supplied. Project cards use designed icons instead of screenshots.
+- The two freeCodeCamp certificate images are in `public/images/`. The certificate cards link to their verification pages.
 - `skillAreas` are explicitly labelled **areas of interest**, since specific skills have not yet been confirmed. Review the list and change the wording and content to reflect your real skills.
 - `certifications` contains the two freeCodeCamp certificate links and issue dates shown in the Skills section.
 - `studioFocus` contains intended offerings, not claims about completed client work.
