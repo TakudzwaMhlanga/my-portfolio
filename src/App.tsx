@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { certifications, profile, projects, skillAreas, studioFocus, type Project } from './data/site'
+import { certifications, education, experience, profile, projects, skillAreas, studioFocus, type Project } from './data/site'
 
 const nav = [
   ['Home', 'home'], ['About', 'about'], ['Projects', 'projects'],
@@ -69,10 +69,10 @@ function Hero() {
   return <section id="home" className="hero section-grid">
     <div className="container hero-inner">
       <div className="hero-copy">
-        <p className="eyebrow"><span className="eyebrow-dot" /> Full-stack developer & data science student</p>
-        <h1>Hi, I’m <span>Takudzwa<br />Mhlanga.</span></h1>
+        <p className="eyebrow"><span className="eyebrow-dot" /> Full-stack developer & NUST final-year student</p>
+        <h1>Takudzwa<br /><span>Mhlanga.</span></h1>
         <p className="hero-signature">You can call me <strong>Casper Hlangester.</strong></p>
-        <p className="hero-lede">I build practical web applications, dashboards and data-driven systems, combining full-stack development with a Data Science and Informatics background.</p>
+        <p className="hero-lede">I build practical web applications, dashboards and data-driven systems while completing a BSc in Informatics and Analytics at NUST.</p>
         <div className="hero-actions"><a className="button button-primary" href="#projects">View projects <Arrow diagonal /></a><a className="button button-outline" href="#contact"><Icon name="mail" size={17} /> Contact me <Arrow /></a></div>
         <a className="hero-about-link" href="#about"><span className="hero-about-icon"><Icon name="user" size={17} /></span> Get to know me <Arrow diagonal /></a>
         <div className="hero-scroll"><span className="scroll-line" /> Scroll to explore</div>
@@ -84,13 +84,19 @@ function Hero() {
 }
 
 function About() {
-  return <section id="about" className="section about-section"><div className="container about-grid">
-    <div className="about-note" aria-label="Takudzwa's approach"><span className="about-note-index">CASPER HLANGESTER / 01</span><strong>Build things<br />that <em>matter.</em></strong><span className="about-note-mark" aria-hidden="true">&lt;/&gt;</span><p>Practical thinking. Clear interfaces. Useful outcomes.</p></div>
-    <div className="about-copy"><SectionLabel number="01">ABOUT ME</SectionLabel><h2>Curiosity meets <em>craft.</em></h2>
-      <p className="lead">I’m Takudzwa, a developer interested in turning complex ideas into useful digital systems.</p>
-      <p>I’m studying Data Science and Informatics, which shapes how I think about both the interface people use and the information behind it. I’m drawn to practical problems where thoughtful design, clear logic and data can work together.</p>
-      <p>Casper Hlangester is the name I create under. It’s a reminder to stay curious, keep learning and build with intention.</p>
-      <a className="text-link" href="#studio">Meet CasperCode Studio <Arrow diagonal /></a>
+  return <section id="about" className="section about-section"><div className="container">
+    <div className="about-grid">
+      <div className="about-note" aria-label="Takudzwa's approach"><span className="about-note-index">CASPER HLANGESTER / 01</span><strong>Build things<br />that <em>matter.</em></strong><span className="about-note-mark" aria-hidden="true">&lt;/&gt;</span><p>Practical thinking. Clear interfaces. Useful outcomes.</p></div>
+      <div className="about-copy"><SectionLabel number="01">ABOUT ME</SectionLabel><h2>Curiosity meets <em>craft.</em></h2>
+        <p className="lead">I’m Takudzwa, a developer interested in turning complex ideas into useful digital systems.</p>
+        <p>I’m a final-year student at the National University of Science and Technology (NUST), studying Informatics and Analytics. I’m drawn to practical problems where thoughtful design, clear logic and data can work together.</p>
+        <p>Casper Hlangester is the name I create under. It’s a reminder to stay curious, keep learning and build with intention.</p>
+        <a className="text-link" href="#studio">Meet CasperCode Studio <Arrow diagonal /></a>
+      </div>
+    </div>
+    <div className="background-highlights" aria-label="Education and experience">
+      <article className="background-card"><div className="background-card-icon"><Icon name="code" size={25} /></div><div><span className="background-card-label">EDUCATION / 01</span><h3>{education.degree}</h3><p>{education.institution}</p><div className="background-card-meta"><span>{education.status}</span><span>{education.completion}</span></div></div></article>
+      <article className="background-card"><div className="background-card-icon"><Icon name="building" size={25} /></div><div><span className="background-card-label">EXPERIENCE / 02</span><h3>{experience.organization}</h3><p>{experience.location}</p><div className="background-card-meta"><span>{experience.period}</span></div></div></article>
     </div>
   </div></section>
 }
@@ -122,7 +128,7 @@ function Projects() {
 }
 
 function Skills() {
-  return <section id="skills" className="section skills-section"><div className="container"><div className="skills-grid"><div><SectionLabel number="03">SKILLS & INTERESTS</SectionLabel><h2>Always learning.<br /><em>Always building.</em></h2><p>My academic focus is Data Science and Informatics. These are areas of interest and technologies connected to the work I want to explore.</p></div><div className="skill-list">{skillAreas.map((group, index) => <div className="skill-row" key={group.category}><span className="skill-number">0{index + 1}</span><div><h3>{group.category}</h3><p>{group.items.join(' · ')}</p></div><Arrow diagonal /></div>)}</div></div><div className="certifications"><h3>Certifications</h3><div className="certification-list">{certifications.map(certificate => <a key={certificate.url} href={certificate.url} target="_blank" rel="noopener noreferrer">{certificate.imageUrl && <img src={`${import.meta.env.BASE_URL}${certificate.imageUrl.replace(/^\//, '')}`} alt={`${certificate.title} certificate awarded to Takudzwa Mhlanga`} loading="lazy" />}<span><small>{certificate.issuer} · {certificate.issued}</small><strong>{certificate.title}</strong></span><Arrow diagonal /></a>)}</div></div></div></section>
+  return <section id="skills" className="section skills-section"><div className="container"><div className="skills-grid"><div><SectionLabel number="03">SKILLS & INTERESTS</SectionLabel><h2>Always learning.<br /><em>Always building.</em></h2><p>My academic focus is Informatics and Analytics. These are areas of interest and technologies connected to the work I want to explore.</p></div><div className="skill-list">{skillAreas.map((group, index) => <div className="skill-row" key={group.category}><span className="skill-number">0{index + 1}</span><div><h3>{group.category}</h3><p>{group.items.join(' · ')}</p></div><Arrow diagonal /></div>)}</div></div><div className="certifications"><h3>Certifications</h3><div className="certification-list">{certifications.map(certificate => <a key={certificate.url} href={certificate.url} target="_blank" rel="noopener noreferrer">{certificate.imageUrl && <img src={`${import.meta.env.BASE_URL}${certificate.imageUrl.replace(/^\//, '')}`} alt={`${certificate.title} certificate awarded to Takudzwa Mhlanga`} loading="lazy" />}<span><small>{certificate.issuer} · {certificate.issued}</small><strong>{certificate.title}</strong></span><Arrow diagonal /></a>)}</div></div></div></section>
 }
 
 function Studio() {

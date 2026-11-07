@@ -11,6 +11,19 @@ export const profile = {
   portraitUrl: '/images/takudzwa-portrait.jpg',
 }
 
+export const education = {
+  degree: 'BSc in Informatics and Analytics',
+  institution: 'National University of Science and Technology (NUST)',
+  status: 'Final-year student',
+  completion: 'Expected 2027',
+}
+
+export const experience = {
+  organization: 'KCI Microfinance',
+  location: 'Ngezi Branch',
+  period: 'August 2025 — July 2026',
+}
+
 export type Project = {
   id: string
   number: string

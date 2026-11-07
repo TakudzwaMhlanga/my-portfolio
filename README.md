@@ -26,13 +26,14 @@ Most information lives in **`src/data/site.ts`**:
 
 - `profile` contains the public email, WhatsApp, call number, GitHub, and LinkedIn links. Check these before publishing. The contact area provides `mailto:`, WhatsApp, and `tel:` links.
 - `profile.portraitUrl` points to the supplied profile photo in `public/images/`. The first screen displays it with descriptive alt text.
+- `education` and `experience` contain the NUST degree details and the KCI Microfinance Ngezi Branch dates shown in About.
 - Edit `projects` to update status, case studies, technologies, features and optional `demoUrl`/`sourceUrl`. Only add links that exist. The AI loan eligibility project remains a concept; KCI Microfinance and Warupinduka are listed as built based on the project details supplied. Project cards use designed icons instead of screenshots.
 - The two freeCodeCamp certificate images are in `public/images/`. The certificate cards link to their verification pages.
 - `skillAreas` are explicitly labelled **areas of interest**, since specific skills have not yet been confirmed. Review the list and change the wording and content to reflect your real skills.
 - `certifications` contains the two freeCodeCamp certificate links and issue dates shown in the Skills section.
 - `studioFocus` contains intended offerings, not claims about completed client work.
 
-Layout and interaction are in `src/App.tsx`; styling is in `src/styles.css`. The page title and sharing description are in `index.html`. The favicon is `public/favicon.svg`. There is no stock photography or invented portrait. Google Fonts may be fetched when available; system font fallbacks keep the site readable offline.
+Layout and interaction are in `src/App.tsx`; styling is in `src/styles.css` and `src/refinements.css`. The page title and sharing description are in `index.html`. The favicon is `public/favicon.svg`. There is no stock photography or invented portrait. Google Fonts may be fetched when available; system font fallbacks keep the site readable offline.
 
 ## GitHub repository and publishing
 
@@ -69,6 +70,6 @@ The custom `404.html` gives visitors a way back if they reach a missing URL. It 
 ## Details still needed from you
 
 - Confirmation of your actual skills and preferred technologies.
-- Any further academic details you want displayed, such as institution and degree dates.
+- Your KCI Microfinance role title and responsibilities, if you want them displayed alongside the confirmed branch and dates.
 
 No client names, testimonials, performance statistics, qualifications or years of experience were invented for this site.

@@ -283,3 +283,135 @@
 @media (prefers-reduced-motion: reduce) {
   .project-symbol, .hero-about-link, .contact-links a { transition: none; }
 }
+
+/* Quiet technical motifs give each section depth without competing with the work. */
+.hero::after {
+  content: '';
+  position: absolute;
+  width: min(620px, 60vw);
+  aspect-ratio: 1;
+  left: -250px;
+  bottom: -320px;
+  border: 1px solid rgba(79, 224, 208, .18);
+  border-radius: 50%;
+  box-shadow: 0 0 0 78px rgba(79, 224, 208, .025), 0 0 0 156px rgba(79, 224, 208, .018);
+  pointer-events: none;
+}
+
+.hero-inner, .hero-bottom { position: relative; z-index: 1; }
+
+.about-section, .projects-section, .skills-section, .studio-section, .contact-section {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.about-section::before, .projects-section::before, .skills-section::before, .studio-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(100, 212, 204, .12) .8px, transparent .8px);
+  background-size: 25px 25px;
+  mask-image: linear-gradient(90deg, transparent 30%, #000 100%);
+  opacity: .45;
+}
+
+.about-section::after, .skills-section::after, .studio-section::after {
+  content: '';
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border: 1px solid rgba(79, 224, 208, .11);
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 0 68px rgba(79, 224, 208, .025), 0 0 0 136px rgba(79, 224, 208, .018);
+}
+
+.about-section::after { top: -330px; right: -220px; }
+.skills-section::after { bottom: -370px; left: -250px; }
+.studio-section::after { top: -365px; right: -260px; }
+.about-section > .container, .projects-section > .container, .skills-section > .container, .studio-section > .container, .contact-section > .container { position: relative; z-index: 1; }
+
+.background-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: clamp(46px, 7vw, 84px);
+}
+
+.background-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 22px;
+  min-height: 234px;
+  padding: clamp(24px, 3vw, 35px);
+  overflow: hidden;
+  border: 1px solid #335761;
+  background: linear-gradient(132deg, rgba(24, 61, 69, .92), rgba(12, 32, 43, .95) 62%);
+}
+
+.background-card::after {
+  content: '';
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  right: -80px;
+  bottom: -130px;
+  border: 1px solid rgba(122, 237, 224, .15);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.background-card-icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  color: #72eadb;
+  border: 1px solid #517d82;
+  background: rgba(79, 224, 208, .065);
+}
+
+.background-card-label {
+  display: block;
+  margin: 4px 0 16px;
+  font: 500 10px 'DM Mono', monospace;
+  letter-spacing: .16em;
+  color: #7dddcf;
+}
+
+.background-card h3 {
+  margin: 0 0 9px;
+  font: 600 clamp(21px, 2.2vw, 28px)/1.2 'Space Grotesk', sans-serif;
+  letter-spacing: -.045em;
+}
+
+.background-card p { margin: 0 0 22px; color: #bfd5d6; line-height: 1.5; }
+.background-card-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+.background-card-meta span { padding: 7px 10px; color: #d9f3ec; border: 1px solid #41656c; font: 500 11px 'DM Mono', monospace; }
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(7,18,27,.09) 1px, transparent 1px), linear-gradient(90deg, rgba(7,18,27,.09) 1px, transparent 1px);
+  background-size: 68px 68px;
+  mask-image: linear-gradient(90deg, #000, transparent 72%);
+}
+
+@media (max-width: 760px) {
+  .hero::after { width: 390px; left: -280px; bottom: -190px; }
+  .background-highlights { grid-template-columns: 1fr; gap: 14px; }
+  .background-card { min-height: 0; }
+  .about-section::after, .skills-section::after, .studio-section::after { opacity: .55; }
+}
+
+@media (max-width: 460px) {
+  .background-card { grid-template-columns: 42px minmax(0, 1fr); gap: 15px; padding: 22px; }
+  .background-card-icon { width: 42px; height: 42px; }
+  .background-card-icon svg { width: 21px; height: 21px; }
+  .background-card h3 { font-size: 21px; }
+}
